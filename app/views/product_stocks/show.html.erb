@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @product_stock.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @product_stock.quantity %>
+</p>
+
+<p>
+  <b>Price per quantity:</b>
+  <%= @product_stock.price_per_quantity %>
+</p>
+
+<p>
+  <b>Purchased from:</b>
+  <%= @product_stock.purchased_from %>
+</p>
+
+<p>
+  <b>Total amount:</b>
+  <%= @product_stock.total_amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_stock_path(@product_stock) %> |
+<%= link_to 'Back', product_stocks_path %>
