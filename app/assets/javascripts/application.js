@@ -14,4 +14,10 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
 //= require jquery-fileupload
+//= require bootstrap-datepicker
+
+$(document).ready(function(){
+  $('[data-behaviour~=datepicker]').datepicker({format: 'dd-mm-yyyy'});
+});

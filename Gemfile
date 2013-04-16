@@ -6,7 +6,9 @@ gem 'rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+
 gem 'activeadmin'
+gem "just-datetime-picker"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,10 +23,15 @@ group :assets do
 end
 gem 'kaminari'
 gem 'jquery-rails'
+
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'bootstrap-sass', '~> 2.3.1.0'
+
 gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
 gem "paperclip"
 gem "jquery-fileupload-rails"
 # To use ActiveModel has_secure_password

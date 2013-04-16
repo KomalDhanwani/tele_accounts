@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+  revision: 4dbdbc405229725ab800daa14b2a74878214f58b
+  specs:
+    bootstrap-datepicker-rails (1.0.0.4)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 98366d05f29e3a920db62540512fb586fc144fa5
   specs:
@@ -96,6 +103,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.7)
+    just-datetime-picker (0.0.6)
+      activeadmin (>= 0.4.4)
+      formtastic (>= 2.0.0)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -185,10 +195,12 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bootstrap-datepicker-rails!
   bootstrap-sass (~> 2.3.1.0)
   coffee-rails (~> 3.2.1)
   jquery-fileupload-rails
   jquery-rails
+  just-datetime-picker
   kaminari
   less-rails
   mysql2
