@@ -1,4 +1,7 @@
 TeleAccount::Application.routes.draw do
+  resources :product_stocks
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
