@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ProductStock -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Product:</b>
-  <%= @product_stock.product_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
+  <dd><%= @product_stock.product_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
+  <dd><%= @product_stock.quantity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price_per_quantity) %>:</strong></dt>
+  <dd><%= @product_stock.price_per_quantity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:purchased_from) %>:</strong></dt>
+  <dd><%= @product_stock.purchased_from %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:total_amount) %>:</strong></dt>
+  <dd><%= @product_stock.total_amount %></dd>
+</dl>
 
-<p>
-  <b>Quantity:</b>
-  <%= @product_stock.quantity %>
-</p>
-
-<p>
-  <b>Price per quantity:</b>
-  <%= @product_stock.price_per_quantity %>
-</p>
-
-<p>
-  <b>Purchased from:</b>
-  <%= @product_stock.purchased_from %>
-</p>
-
-<p>
-  <b>Total amount:</b>
-  <%= @product_stock.total_amount %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_stock_path(@product_stock) %> |
-<%= link_to 'Back', product_stocks_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              product_stocks_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_stock_path(@product_stock), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_stock_path(@product_stock),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
