@@ -15,8 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
+//= require jquery-fileupload
 //= require bootstrap-datepicker
 
 $(document).ready(function(){

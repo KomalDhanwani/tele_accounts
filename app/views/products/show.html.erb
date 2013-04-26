@@ -15,13 +15,7 @@
   <dt><strong><%= model_class.human_attribute_name(:stocked_on) %>:</strong></dt>
   <dd><%= @product.stocked_on %></dd>
   <dt><strong><%= model_class.human_attribute_name(:photo_file_name) %>:</strong></dt>
-  <dd><%= @product.photo_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_content_type) %>:</strong></dt>
-  <dd><%= @product.photo_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_file_size) %>:</strong></dt>
-  <dd><%= @product.photo_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_updated_at) %>:</strong></dt>
-  <dd><%= @product.photo_updated_at %></dd>
+  <dd><%= image_tag(@product.photo.url) %></dd>
 </dl>
 
 <div class="form-actions">

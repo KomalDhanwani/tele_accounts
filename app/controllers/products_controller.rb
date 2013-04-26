@@ -44,8 +44,16 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        format.html {
+          render :json => [{ :name => @product.photo_file_name,
+                    :type => @product.photo_content_type,
+                    :size => @product.photo_file_size,
+                    :url => @product.photo.url,
+                    :thumbnail_url => @product.photo.url(:thumb)}]
+        }
+        format.json {
+          render :json => {files: [@product.to_jq_upload] }
+        }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
