@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   just_define_datetime_picker :stocked_on, :add_to_attr_accessible => true
   include Rails.application.routes.url_helpers
 
+  validates :name, :price, :selling_price, :quantity, :presence => true
   def to_jq_upload
     {
       "name" => photo_file_name,
