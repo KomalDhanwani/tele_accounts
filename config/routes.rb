@@ -1,6 +1,10 @@
 TeleAccount::Application.routes.draw do
+  resources :daily_sellings
+
+
   resources :products
   resources :product_stocks
+  resources :product_images
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -1,0 +1,44 @@
+<%- model_class = DailySelling -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:price_per_quantity) %></th>
+      <th><%= model_class.human_attribute_name(:sold_to) %></th>
+      <th><%= model_class.human_attribute_name(:total_amount) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @daily_sellings.each do |daily_selling| %>
+      <tr>
+        <td><%= link_to daily_selling.id, daily_selling_path(daily_selling) %></td>
+        <td><%= daily_selling.product_id %></td>
+        <td><%= daily_selling.quantity %></td>
+        <td><%= daily_selling.price_per_quantity %></td>
+        <td><%= daily_selling.sold_to %></td>
+        <td><%= daily_selling.total_amount %></td>
+        <td><%=l daily_selling.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_daily_selling_path(daily_selling), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      daily_selling_path(daily_selling),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_daily_selling_path,
+            :class => 'btn btn-primary' %>

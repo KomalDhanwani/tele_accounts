@@ -1,4 +1,4 @@
-<%= form_for @product_stock, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @daily_selling, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :product_id, :class => 'control-label' %>
     <div class="controls">
@@ -14,19 +14,19 @@
   <div class="control-group">
     <%= f.label :price_per_quantity, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :price_per_quantity, :class => 'number_field' %>
+      <%= f.text_field :price_per_quantity, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :purchased_from, :class => 'control-label' %>
+    <%= f.label :sold_to, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :purchased_from, :class => 'text_field' %>
+      <%= f.text_field :sold_to, :class => 'text_field' %>
     </div>
   </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                product_stocks_path, :class => 'btn' %>
+                daily_sellings_path, :class => 'btn' %>
   </div>
 <% end %>

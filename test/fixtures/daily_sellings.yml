@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  quantity: 1
+  price_per_quantity: 9.99
+  sold_to: MyString
+  total_amount: 9.99
+
+two:
+  product_id: 1
+  quantity: 1
+  price_per_quantity: 9.99
+  sold_to: MyString
+  total_amount: 9.99

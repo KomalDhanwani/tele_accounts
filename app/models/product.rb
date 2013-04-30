@@ -15,4 +15,13 @@ class Product < ActiveRecord::Base
       "delete_type" => "DELETE"
     }
   end
+
+  def inc_qty(qty)
+    increment!(:quantity, qty)
+  end
+
+  def dec_qty(qty)
+    decrement!(:quantity, qty)
+  end
+
 end
