@@ -31,7 +31,7 @@ gem 'bootstrap-sass', '~> 2.3.1.0'
 gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
-
+gem "bootstrap_helper"
 gem "paperclip"
 gem "jquery-fileupload-rails"
 # To use ActiveModel has_secure_password
